@@ -17,7 +17,7 @@ import redis.clients.jedis.JedisPoolConfig;
  * @Auther 刘瑞
  * @create 2022-01-18
  */
-@Configuration
+//@Configuration
 @EnableCaching
 public class RedisConfig {
     /** redis数据库 */
@@ -51,10 +51,10 @@ public class RedisConfig {
     @Value("${spring.redis.jedis.pool.min-idle}")
     private int redisPoolMinIdle;
 
-    @Bean
-    public RedisTemplate<String, Object> redisTemplate() {
-        return buildRedisTemplate(buildConnectionFactory(jedisPoolConfig(), redisDatabase));
-    }
+//    @Bean
+//    public RedisTemplate<String, Object> redisTemplate() {
+//        return buildRedisTemplate(buildConnectionFactory(jedisPoolConfig(), redisDatabase));
+//    }
 
     @SuppressWarnings("all")
     public RedisTemplate<String, Object> buildRedisTemplate(RedisConnectionFactory factory) {
